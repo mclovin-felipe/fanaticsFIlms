@@ -1,0 +1,60 @@
+<ion-header [translucent]="false">
+  <ion-toolbar>
+     <ion-buttons slot="start">
+      <ion-menu-button color="dark" cauto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <img src="/assets/icon/Fanaticsfilm.png" alt="Logo" style="margin-left: 22%;">
+    </ion-title>
+    <!-- <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <ion-icon slot="icon-only" name="search" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="fondo">
+  <ion-grid>
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <ion-col size="12" size-md="8" size-lg="6">
+        <ion-card class="ion-padding">
+          <ion-card-content>
+            <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+              <ion-list>
+                <ion-item>
+                  <ion-label position="stacked">Título:</ion-label>
+                  <ion-input type="text" formControlName="titulo"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label position="stacked">Categoría:</ion-label>
+                  <ion-select formControlName="categoria">
+                    <ion-select-option value="pelicula">Pelicula</ion-select-option>
+                    <ion-select-option value="serie">Serie</ion-select-option>
+                  </ion-select>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label position="stacked">Descripción:</ion-label>
+                  <ion-textarea formControlName="descripcion" rows="4"></ion-textarea>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label position="stacked">Subir Imagen:</ion-label>
+                  <ion-input type="file" formControlName="foto" (change)="onFileSelected($event)"></ion-input>
+                </ion-item>
+
+                <ion-button expand="full" color="dark" type="submit">Subir</ion-button>
+              </ion-list>
+            </form>
+
+            <!-- Mensajes de validación o respuesta del servidor -->
+            <!-- Puedes personalizar esta parte según tus necesidades -->
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

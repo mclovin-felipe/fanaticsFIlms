@@ -1,0 +1,83 @@
+.fondo{
+    --background: none;
+  /*   background-color: #1B2631  ; */
+    background: url('/assets/icon/fondoprueba.png') ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  ion-toolbar{
+    --background: none;
+    color: white;
+    background-color: #F4F6F7 ;
+  }
+  ion-title img {
+    max-width: 120px; /* Ancho máximo de la imagen */
+    height: auto; /* Altura ajustada automáticamente */
+    display: block; /* Para centrar la imagen horizontalmente */
+    margin: 0 auto; /* Margen automático en los lados para centrar verticalmente */
+  }
+
+  /* Agrega tu CSS personalizado aquí */
+
+.fondo {
+    background-color: #f0f0f0; /* Cambia el color de fondo según tus preferencias */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  ion-card {
+    max-width: 400px; /* Ajusta el ancho del formulario según tus necesidades */
+    margin: 0 auto;
+  }
+  
+  ion-item {
+    margin-bottom: 20px;
+  }
+  
+  ion-label {
+    font-weight: bold;
+  }
+  
+  ion-select {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  
+  ion-input[type="file"] {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  
+  ion-button {
+    --background: #343a40; /* Cambia el color de fondo del botón */
+    --color: #fcfcfc; /* Cambia el color del texto del botón */
+    --border-radius: 20px; /* Cambia el radio de borde del botón */
+    --padding-start: 20px;
+    --padding-end: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Estilos para los mensajes de validación */
+  ion-item.invalid {
+    --ion-item-background: #f8d7da; /* Cambia el color de fondo de los campos inválidos */
+    --ion-item-border-color: #f5c6cb; /* Cambia el color del borde de los campos inválidos */
+  }
+  
+  ion-item.invalid ion-label {
+    color: #721c24; /* Cambia el color del texto de etiqueta de los campos inválidos */
+  }
+  
+  /* Estilos para los mensajes de éxito */
+  ion-item.valid {
+    --ion-item-background: #d4edda; /* Cambia el color de fondo de los campos válidos */
+    --ion-item-border-color: #c3e6cb; /* Cambia el color del borde de los campos válidos */
+  }
+  
+  ion-item.valid ion-label {
+    color: #155724; /* Cambia el color del texto de etiqueta de los campos válidos */
+  }
+  

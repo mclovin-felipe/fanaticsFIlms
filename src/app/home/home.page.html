@@ -1,0 +1,84 @@
+<ion-header [translucent]="false">
+  <ion-toolbar>
+    <!--  <ion-buttons slot="start">
+      <ion-menu-button color="dark" cauto-hide="false"></ion-menu-button>
+    </ion-buttons> -->
+    <ion-title>
+      <img src="/assets/icon/Fanaticsfilm.png" alt="Logo">
+    </ion-title>
+    <!-- <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <ion-icon slot="icon-only" name="search" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondo" [fullscreen]="true">
+
+  <swiper-container #swiper (afterinit)="swiperReady()" (slidechange)="swiperSlideChanged($event)" [loop]="true"
+    [pagination]="true" [autoplay]="false" [effect]="'cards'" [spacebetween]="10">
+    <swiper-slide *ngFor="let image of images" class="w-fit">
+      <div class="swiper-zoom-container">
+        <img [src]="image" />
+      </div>
+    </swiper-slide>
+  </swiper-container>
+
+  <h2 style="color: aliceblue; margin-left: 3%;">Peliculas</h2>
+  <h1 *ngIf="!havePeliculas" style="color: white; padding: 10px;" >No hay peliculas</h1>
+
+  <div class="scroll-container" id="peliculasSemana">
+    <div *ngFor="let item of peliculas">
+      <ion-card class="list-inline-item" >
+
+        <a [routerLink]="['/peliculas/'+item]" [queryParams]="item" > <!-- Cambio aquí -->
+         
+          <div class="swiper-zoom-container">
+            <img [src]="item.imagen" />
+          </div>
+          <!-- <img src={{TodasPeliculas[item].banner}} alt="Póster 1" style="max-width: 130px; height: auto;"> -->
+        </a>
+      </ion-card>
+    </div>
+   
+  </div>
+  <h2 style="color: aliceblue; margin-left: 3%;">Series</h2>
+  <h1 *ngIf="!haveSeries" style="color: white; padding: 10px;" >No hay series</h1>
+
+  <div class="scroll-container" >
+    <div *ngFor="let item of series">
+       <ion-card class="list-inline-item" >
+
+        <a [routerLink]="['/serie/'+item]" [queryParams]="item" > <!-- Cambio aquí -->
+         
+          <div class="swiper-zoom-container">
+            <img [src]="item.imagen" />
+          </div>
+          <!-- <img src={{TodasPeliculas[item].banner}} alt="Póster 1" style="max-width: 130px; height: auto;"> -->
+        </a>
+      </ion-card>
+    </div>
+    
+  </div>
+  <h2 style="color: aliceblue; margin-left: 3%;">Series y Peliculas por Estrenar</h2>
+  <div class="scroll-container" >
+    <ion-card class="list-inline-item" >
+        <img src="/assets/icon/estreno1.jpg" alt="estreno" style="max-width: 130px; height: auto; ">
+    </ion-card>
+    <ion-card class="list-inline-item" style="margin-left: 1%;">
+        <img src="/assets/icon/estreno2.jpg" alt="estreno" style="max-width: 130px; height: auto;">
+    </ion-card>
+    <ion-card class="list-inline-item" style="margin-left: 1%;">
+        <img src="/assets/icon/estreno3.jpeg" alt="estreno" style="max-width: 130px; height: auto;">
+    </ion-card>
+    <ion-card class="list-inline-item" style="margin-left: 1%;">
+        <img src="/assets/icon/estreno4.jpg" alt="estreno" style="max-width: 130px; height: auto;">
+    </ion-card>
+    <ion-card class="list-inline-item" style="margin-left: 1%;">
+        <img src="/assets/icon/estreno5.jpg" alt="estreno" style="max-width: 130px; height: auto;">
+    </ion-card>
+   
+  </div>
+
+</ion-content>

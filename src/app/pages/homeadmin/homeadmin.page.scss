@@ -1,0 +1,26 @@
+.fondo{
+    --background: none;
+  /*   background-color: #1B2631  ; */
+    background: url('/assets/icon/fondoprueba.png') ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  ion-toolbar{
+    --background: none;
+    color: white;
+    background-color: #F4F6F7 ;
+  }
+  ion-title img {
+    max-width: 120px; /* Ancho máximo de la imagen */
+    height: auto; /* Altura ajustada automáticamente */
+    display: block; /* Para centrar la imagen horizontalmente */
+    margin: 0 auto; /* Margen automático en los lados para centrar verticalmente */
+  }
+
+  .rounded-image {
+    border-radius: 50%; /* Esto crea un borde redondo que hará que la imagen se vea redonda */
+    width: 48px; /* Ajusta el ancho deseado para la imagen redonda */
+    height: 48px; /* Ajusta la altura deseada para la imagen redonda */
+  }

@@ -1,0 +1,58 @@
+<ion-header [translucent]="false">
+  <ion-toolbar>
+     <ion-buttons slot="start">
+      <ion-menu-button color="dark" cauto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <img src="/assets/icon/Fanaticsfilm.png" alt="Logo" style="margin-left: 22%;">
+    </ion-title>
+    <!-- <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <ion-icon slot="icon-only" name="search" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="fondo">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="margin-left: 28%; font-size: 180%;">¡Bienvenid@!</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+       Tu papel es esencial para mantener un entorno respetuoso y
+          agradable en nuestra comunidad de aficionados al cine y las series. Valoramos enormemente tu labor como administrador.
+          ¡Sigue adelante! 
+    </ion-card-content>
+  </ion-card>
+  <ion-card style="background-color: black;">
+    <ion-card-header>
+      <ion-card-title style="margin-left: 17%; font-size: 180%; color: white;">Usuarios Registrados</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card *ngFor="let usuario of users">
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start" class="ion-avatar">
+            <img [src]="usuario.imagen" alt="{{ usuario.nombre }} Image" style="border-radius: 100%;" />
+          </ion-thumbnail>
+          
+          <ion-label>{{ usuario.nombre }}</ion-label>
+          
+          <ion-button fill="clear" slot="end" (click)="deleteUsuario(usuario.id)"  >
+            <ion-icon name="trash-bin" color="dark"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card style="background-color: black;">
+    <ion-card-header>
+      <ion-card-title style="margin-left: 27%; font-size: 180%; color: white;">Fecha Actual</ion-card-title>
+    </ion-card-header>
+    <ion-card-content style="margin-left: 22%;">
+      {{ currentDate | date:'fullDate' }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

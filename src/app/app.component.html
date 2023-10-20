@@ -1,0 +1,68 @@
+<ion-app>
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-title>
+        <img src="/assets/icon/Fanaticsfilm.png" alt="Logo">
+      </ion-title>
+    </ion-header>
+    <ion-content class="ion-padding fondo" >
+      <ion-menu-toggle>
+        <ion-item [routerLink]="['/homeadmin']" class="fondo" style="margin-bottom: 2%;">
+          <ion-icon  slot="start" name="home-outline" style="color: white;"></ion-icon>
+          <ion-label style="color: white;">
+            Home
+          </ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+        <ion-menu-toggle >
+          <ion-item [routerLink]="['/miperfil']" class="fondo" style="margin-bottom: 2%;">
+            <ion-icon  slot="start" name="person-outline" style="color: white;"></ion-icon>
+            <ion-label style="color: white;">
+              Mi perfil
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle >
+          <ion-item *ngIf="admin" [routerLink]="['/reportados']" class="fondo" style="margin-bottom: 2%;">
+            <ion-icon slot="start" name="skull-outline" style="color: white;"></ion-icon>
+            <ion-label style="color: white;">
+              Reportes
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle >
+          <ion-item *ngIf="admin" [routerLink]="['/peliculasadmin']" class="fondo" style="margin-bottom: 2%;">
+            <ion-icon slot="start" name="duplicate-outline" style="color: white;"></ion-icon>
+            <ion-label style="color: white;">
+              Subir Serie/Pelicula
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+    </ion-content>
+    <footer>
+      <ion-toolbar class="fondo">
+        <ion-menu-toggle >
+          <ion-item (click)="logout()" class="fondo" style="margin-bottom: 2%;">
+            <ion-icon slot="start" name="lock-closed-outline" style="color: white;"></ion-icon>
+            <ion-label style="color: white;">
+              Cerrar Sesión
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-toolbar>
+    </footer>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding"> Tap the button in the toolbar to open the menu. </ion-content>
+  </div>
+  <ion-router-outlet ></ion-router-outlet>
+  <app-navegacion></app-navegacion>
+</ion-app>

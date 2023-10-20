@@ -1,0 +1,42 @@
+.fondo{
+  --background: none;
+  background: url('/assets/icon/fondo.jpg') ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+ion-content {
+  --background: transparent;
+}
+
+
+/* Personaliza el tamaño de fuente del botón */
+ion-button {
+font-size: 16px;
+}
+
+/* Personaliza la apariencia de la tarjeta */
+ion-card {
+background-color: #f5f5f5;
+border-radius: 10px;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+padding: 20px; /* Ajusta el padding para hacer la tarjeta más grande */
+width: 90%; /* Ajusta el ancho de la tarjeta */
+max-width: 500px; /* Establece un máximo para el ancho de la tarjeta */
+margin: 40% auto;
+}
+
+/* Personaliza el encabezado de la tarjeta */
+ion-card-header {
+background-color: #f5f5f5;
+color: white;
+}
+
+ion-button {
+margin-top: 15px;
+font-size: 16px;
+border-radius: 20px;
+padding: 10px 20px;
+}
+

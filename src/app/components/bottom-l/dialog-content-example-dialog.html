@@ -1,0 +1,6 @@
+<div class="huella">
+<button style="height: 15vh; width: 15vh;" (click)="login()"  mat-fab color="primary" aria-label="Example icon button with a delete icon">
+  <mat-icon  *ngIf="onLogin" class="icon-display"  >fingerprint</mat-icon>
+  <mat-spinner *ngIf="!onLogin" class="  login" color="accent"></mat-spinner>
+</button>
+</div>

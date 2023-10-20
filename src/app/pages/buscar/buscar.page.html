@@ -1,0 +1,15 @@
+
+<ion-header>
+  <ion-toolbar class="fondo">
+    <ion-searchbar placeholder="Buscar" style="margin-top: 5%;"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="fondo">
+  <div class="grid-container">
+    <ion-card *ngFor="let image of images; let i = index" class="grid-item">
+      <img [src]="image" alt="estreno" >
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+
+</ion-header>
+
+<ion-content [fullscreen]="true" class="fondo">
+  <div class="container">
+    <h2>
+      Registrar
+    </h2>
+    <form [formGroup]="myForm" (ngSubmit)="saveData()" novalidate>
+      <div>
+        <ion-label position="floating">Nombre:</ion-label>
+        <ion-input formControlName="user" type="text" placeholder="Nombre"/>
+      </div>
+      <div>
+        <ion-label position="floating">Email:</ion-label>
+        <ion-input formControlName="email" type="text" placeholder="Email"/>
+      </div>
+      <div>
+        <ion-label position="floating">Contraseña:</ion-label>
+        <ion-item>
+        <ion-input formControlName="password" type="password" placeholder="Contraseña"/>
+        <ion-icon name="eye" ></ion-icon>
+      </ion-item>
+      </div>
+      <div>
+        <ion-label  position="floating">Confirmar contraseña:</ion-label>
+        <ion-item>
+        <ion-input formControlName="passwordConfirm" type="password" placeholder="Confirmar contraseña"/>
+        <ion-icon name="eye" ></ion-icon>
+      </ion-item>
+      </div>
+
+      <div *ngIf="myForm.get('user')!.errors && myForm.get('user')!.dirty">
+        <p *ngIf="myForm.get('user')!.hasError('required')" >Campo nombre requerido</p>
+        
+      </div>
+      <div *ngIf="myForm.get('email')!.errors && myForm.get('email')!.dirty">
+        <p *ngIf="myForm.get('email')!.hasError('required')" >Campo email requerido</p>
+        <p *ngIf="myForm.get('email')!.hasError('email')" >Debes ingresar un email valido.</p>
+        
+      </div>
+      <div *ngIf="myForm.get('password')!.errors && myForm.get('password')!.dirty">
+        <p *ngIf="myForm.get('password')!.hasError('required')" >Campo contraseña requerido</p>
+        <div *ngIf="myForm.get('password')!.hasError('pattern')" class="alerta" >
+          <div class="aviso"><ion-icon name="alert-circle-outline" color="danger" size="medium"></ion-icon>Largo minimo 5</div>
+          <div class="aviso"><ion-icon name="alert-circle-outline" color="danger"></ion-icon>Largo maximo 8</div>
+          <div class="aviso"><ion-icon name="alert-circle-outline" color="danger"></ion-icon>1 caracter especial.</div>
+          <!-- <div class="aviso"><ion-icon name="alert-circle-outline" color="danger" size="medium"></ion-icon></div> -->
+        </div>
+   
+        
+      </div>
+      <div *ngIf="myForm.get('passwordConfirm')!.errors && myForm.get('passwordConfirm')!.dirty">
+<p>Ambas contraseñas deben ser iguales</p>
+        
+      </div>
+      <div>
+        <ion-button expand="full" type="submit" [disabled]="myForm.invalid" >Guardar</ion-button>
+      </div>
+    </form>
+
+  </div>
+  
+</ion-content>

@@ -1,0 +1,36 @@
+.fondo{
+    --background: none;
+  /*   background-color: #1B2631  ; */
+    background: url('/assets/icon/fondoprueba.png') ;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  ion-toolbar{
+    --background: none;
+    color: white;
+    background-color: #F4F6F7 ;
+  }
+  
+  ion-footer{
+    color: white;
+    background-color: #F4F6F7;
+  }
+
+  ion-buttons {
+    justify-content: space-between;  /* Esto distribuirá los botones a lo largo de la barra con espacio igual entre ellos */
+  }
+
+  ion-card {
+    margin: 0;
+    height: 97%;
+  }
+
+  // use 3 colums 
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 8px;
+        padding: 8px;
+    }
+   

@@ -1,0 +1,103 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+
+.fondo{
+  --background: none;
+/*   background-color: #1B2631  ; */
+  background: url('/assets/icon/fondoprueba.png') ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+ion-toolbar{
+  --background: none;
+  color: white;
+  background-color: #F4F6F7 ;
+}
+ion-title img {
+  max-width: 120px; /* Ancho máximo de la imagen */
+  height: auto; /* Altura ajustada automáticamente */
+  display: block; /* Para centrar la imagen horizontalmente */
+  margin: 0 auto; /* Margen automático en los lados para centrar verticalmente */
+}
+
+
+swiper-container {
+  margin-top: 10px;
+  width: 100%;
+  height: 70%;
+/*   background-color: #E0E0E0; */
+/*   --swiper-pagination-bullet-inactive-color: var(--ion-color-step-200, #aa3434);
+  --swiper-pagination-color: var(--ion-color-primary, #3880ff); */
+}
+
+.swiper-wrapper {
+  width: 50%;
+}
+ 
+swiper-slide {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+swiper-slide img {
+  border-radius: 8px;
+  display: block;
+  width: 90%;
+  height: 100%;
+  object-fit: inherit;
+}
+ion-footer{
+  --background: none;
+  color: white;
+  background-color: #F4F6F7;
+}
+
+
+ion-buttons {
+  justify-content: space-between;  /* Esto distribuirá los botones a lo largo de la barra con espacio igual entre ellos */
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  
+}
+
+.list-inline-item {
+  flex: 0 0 auto;
+  width: 130px;
+  height: 190px;
+}
+

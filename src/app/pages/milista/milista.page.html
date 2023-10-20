@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar class="fondo">
+    <ion-title style="margin-left: 37%;">Mi lista</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="fondo">
+  <h2 style="color: white; margin-left: 2%;">Mis series y peliculas</h2>
+  <ion-item class="grid-container" *ngFor="let item of Peliculas" >
+
+    <ion-card class="list-inline-item" >
+
+      <a [routerLink]="['/peliculas/'+item]" [queryParams]="item" > <!-- Cambio aquí -->
+       
+        <div class="swiper-zoom-container">
+          <img [src]="item.imagen" />
+        </div>
+        <!-- <img src={{TodasPeliculas[item].banner}} alt="Póster 1" style="max-width: 130px; height: auto;"> -->
+      </a>
+    </ion-card>
+  </ion-item>
+  <ion-item class="grid-container" *ngFor="let item of Series" >
+
+    <ion-card class="list-inline-item" >
+
+      <a [routerLink]="['/serie/'+item]" [queryParams]="item" > <!-- Cambio aquí -->
+       
+        <div class="swiper-zoom-container">
+          <img [src]="item.imagen" />
+        </div>
+        <!-- <img src={{TodasPeliculas[item].banner}} alt="Póster 1" style="max-width: 130px; height: auto;"> -->
+      </a>
+    </ion-card>
+  </ion-item>
+</ion-content>

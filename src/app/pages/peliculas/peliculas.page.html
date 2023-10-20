@@ -1,0 +1,62 @@
+
+<ion-header [translucent]="false">
+  <ion-toolbar>
+    <ion-buttons slot="start" class="large-button" (click)="goBack()">
+      <ion-icon name="arrow-back-circle-outline" color="dark" class="large-icon"></ion-icon>
+    </ion-buttons>
+    <ion-title>
+      <img src="/assets/icon/Fanaticsfilm.png" alt="Logo" style="margin-left: 19%;">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" class="fondo"
+>
+  <ion-card>
+    <img alt="Silhouette of mountains" src={{img}} />
+    <ion-card-header>
+      <ion-card-title>{{titulo}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+     {{desc}}
+    </ion-card-content>
+
+    <div class="button-container">
+      <app-corazon [titulo]="titulo" tipo="peliculas" [id]="id"  ></app-corazon>
+      
+      <ion-button fill="clear" slot="" class="heart-button">
+        <ion-icon slot="icon-only" name="bookmark-outline" color="dark"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-icon name="person-circle-outline" size="large" slot="start" color="dark"></ion-icon>
+        <ion-input placeholder="Comentar" [(ngModel)]="comentario" ></ion-input>
+        <ion-button fill="clear" slot="end" (click)="comentar()" >
+          <ion-icon slot="icon-only" name="send-outline" color="dark"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <div *ngFor="let comentario of comentarios">
+      
+      <ion-card-content>
+        <ion-item>
+          <ion-icon name="person-circle-outline" color="dark" size="large" style="margin-right: 10px; margin-bottom: 47%;"></ion-icon>
+          <ion-label>
+            <h2>Usuario {{comentario.usuario}}</h2>
+            <p style="margin-top: 5%;">{{comentario.comentarios}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </div>
+    
+  </ion-card>
+</ion-content>
+
+

@@ -1,0 +1,68 @@
+.fondo{
+    --background: none;
+/*     background-color: #1B2631  ; */
+    background: url('/assets/icon/fondo.jpg') ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  ion-card ion-label {
+    white-space: normal;
+    word-wrap: break-word;
+  }
+
+  ion-toolbar{
+    --background: none;
+    color: white;
+    background-color: #F4F6F7 ;
+  }
+
+  ion-toolbar{
+    --background: none;
+    color: white;
+    background-color: #F4F6F7 ;
+  }
+  ion-title img {
+    max-width: 120px; /* Ancho máximo de la imagen */
+    height: auto; /* Altura ajustada automáticamente */
+    display: block; /* Para centrar la imagen horizontalmente */
+    margin: 0 auto; /* Margen automático en los lados para centrar verticalmente */
+  }
+
+  ion-footer{
+    --background: none;
+    color: white;
+    background-color: #F4F6F7;
+  }
+
+  ion-buttons {
+    justify-content: space-between;  /* Esto distribuirá los botones a lo largo de la barra con espacio igual entre ellos */
+  }
+  .button-container {
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+  }
+  
+  .heart-button {
+    margin-left: 1px; /* Agrega espacio entre los botones */
+  }
+  .notfound{
+    
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  /* Aumenta el tamaño del icono */
+.large-icon {
+  font-size: 32px; /* Ajusta el tamaño según tus preferencias */
+}
+
+/* Aumenta el tamaño del botón */
+.large-button {
+  font-size: 24px; /* Ajusta el tamaño según tus preferencias */
+  padding: 12px 16px; /* Ajusta el espacio interno del botón según tus preferencias */
+}
+  

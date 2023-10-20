@@ -1,0 +1,30 @@
+<ion-content class="fondo">
+
+  <div class="container " >
+    <mat-spinner *ngIf="!onLogin" class="  login"></mat-spinner>
+    <div *ngIf="onLogin" class="  login" >
+      <img src="/assets/icon/Fanaticsfilm.png" alt="Logo" style="max-width: 50%;">
+    <h5>Iniciar sesión</h5>
+    <!-- Contenido del formulario de inicio de sesión -->
+ 
+    <ion-item>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input type="text" [(ngModel)]="username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+   
+      <ion-row>
+        <ion-button style="margin-top: 5vh;"  (click)="login()">Ingresar</ion-button>
+        <ion-button style="margin-top: 5vh;"  (click)="registro()">Registrar</ion-button>
+      </ion-row>
+      <a href="#" (click)="contra()" class="olvidaste-contrasena">¿Olvidaste tu contraseña?</a>
+    </div>
+    
+
+        
+
+  </div>
+</ion-content>

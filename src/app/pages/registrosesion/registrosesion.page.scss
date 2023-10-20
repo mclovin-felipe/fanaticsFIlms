@@ -1,0 +1,28 @@
+.fondo{
+  --background: none;
+  background: url('/assets/icon/fondo.jpg') ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.container {
+  margin: 40% auto; /* Esto centra el contenedor verticalmente */
+  background-color: white;
+  padding: 20px;
+  width: 80%;
+  border-radius: 10px;
+}
+.alerta{
+  display: flex;
+  flex-direction: column;
+  padding: 3px;
+}
+.aviso {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.aviso ion-icon {
+  font-size: 20px;
+}
