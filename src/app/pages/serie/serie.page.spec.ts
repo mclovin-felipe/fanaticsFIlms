@@ -5,11 +5,11 @@ describe('Serie1Page', () => {
   let component: SeriePage;
   let fixture: ComponentFixture<SeriePage>;
 
-  beforeEach(async(() => {
+  beforeEach(async() => {
     fixture = TestBed.createComponent(SeriePage);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  }));
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

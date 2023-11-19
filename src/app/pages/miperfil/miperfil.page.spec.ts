@@ -5,11 +5,11 @@ describe('MiperfilPage', () => {
   let component: MiperfilPage;
   let fixture: ComponentFixture<MiperfilPage>;
 
-  beforeEach(async(() => {
+  beforeEach(async() => {
     fixture = TestBed.createComponent(MiperfilPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  }));
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

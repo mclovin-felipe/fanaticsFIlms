@@ -1,6 +1,4 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
-
 import { CorazonComponent } from './corazon.component';
 
 describe('CorazonComponent', () => {
@@ -9,8 +7,8 @@ describe('CorazonComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ CorazonComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [/* Remove CorazonComponent from declarations */],
+      imports: [/* Add necessary imports here */],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CorazonComponent);

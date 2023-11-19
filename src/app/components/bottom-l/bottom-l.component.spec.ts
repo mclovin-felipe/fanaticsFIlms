@@ -1,24 +1,36 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-
-import { DialogContentExample } from './bottom-l.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { RouterTestingModule } from '@angular/router/testing';
+import { DialogContentExample, DialogContentExampleDialog } from './bottom-l.component'; // Importa los componentes que estás probando
 
 describe('BottomLComponent', () => {
-  let component: DialogContentExample;
-  let fixture: ComponentFixture<DialogContentExample>;
+  let component: any; // Componente principal que se está probando
+  let fixture: ComponentFixture<any>; // Fixture para el componente principal
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [DialogContentExample],
-      imports: [IonicModule.forRoot()],
+      // No declarar los componentes aquí
+      imports: [
+        IonicModule.forRoot(),
+        MatDialogModule,
+        MatButtonModule,
+        RouterTestingModule,
+      ],
+      providers: [MatDialog /*, Otros servicios si es necesario */], // Proveedores necesarios para los componentes
     }).compileComponents();
+  }));
 
-    fixture = TestBed.createComponent(DialogContentExample);
+  beforeEach(() => {
+    fixture = TestBed.createComponent(DialogContentExample); // Crear el componente directamente
     component = fixture.componentInstance;
     fixture.detectChanges();
-  }));
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  // Agregar más pruebas si es necesario para DialogContentExample o DialogContentExampleDialog
 });
