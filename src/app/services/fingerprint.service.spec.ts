@@ -1,4 +1,6 @@
+// fingerprint.service.spec.ts
 import { TestBed } from '@angular/core/testing';
+import { NativeBiometricWrapper } from './native-biometric-wrapper.service';
 import { FingerprintService } from './fingerprint.service';
 
 describe('FingerprintService', () => {
@@ -6,9 +8,7 @@ describe('FingerprintService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [FingerprintService], // Agrega el servicio a los providers del módulo de pruebas
-      // Aquí puedes importar otros módulos necesarios para las pruebas si los hay
-      // imports: [ OtrosMódulosNecesarios ],
+      providers: [NativeBiometricWrapper, FingerprintService],
     });
     service = TestBed.inject(FingerprintService);
   });

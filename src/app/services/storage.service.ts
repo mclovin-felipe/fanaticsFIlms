@@ -2,11 +2,10 @@ import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StorageService {
-
-  constructor(private storage: Storage) { }
+  constructor(private storage: Storage) {}
 
   async initStorage() {
     await this.storage.create();
@@ -24,3 +23,4 @@ export class StorageService {
     await this.storage.remove(key);
   }
 }
+

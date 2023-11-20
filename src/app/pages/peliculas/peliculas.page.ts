@@ -1,7 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Peliculas } from 'src/app/assets/peliculas';
-import { ActivatedRoute, Router } from '@angular/router'; // Importa Router
+import { ActivatedRoute, Router } from '@angular/router';
 import { DatabaseService } from 'src/app/services/db.service';
+import { BehaviorSubject } from 'rxjs';
+
+class ActivatedRouteMock {
+  private subject = new BehaviorSubject<{ [key: string]: string }>({});
+  readonly queryParams = this.subject.asObservable();
+
+  // Método para emular cambios en los parámetros de la ruta
+  pushParams(params: { [key: string]: string }) {
+    this.subject.next(params);
+  }
+}
 
 @Component({
   selector: 'app-peliculas',
@@ -14,25 +24,22 @@ export class PeliculasPage implements OnInit {
   desc: string = '';
   img: string = '';
   id?: number;
-  comentarios!: Array<any>;
+  comentarios: any[] = [];
   comentario: string = '';
 
   constructor(
-    private databse: DatabaseService,
+    private database: DatabaseService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
 
-  ngOnInit() {
-    this.databse.comentarios.subscribe((resp) => {
-      console.log(JSON.stringify(resp), 'resp');
-      this.comentarios = resp;
-    });
-    this.route.queryParams.subscribe((params) => {
+  async ngOnInit() {
+    this.route.queryParams.subscribe(async (params) => {
       console.log(params['imagen'], 'paramsssss');
       this.titulo = params['nombre'];
       this.desc = params['descripcion'];
       this.img = params['imagen'];
+
       if (params['imagen'].includes('fakepath')) {
         let imagen = params['imagen'].replace('C:\\fakepath\\', '');
         this.img =
@@ -41,19 +48,35 @@ export class PeliculasPage implements OnInit {
       } else {
         this.img = params['imagen'];
       }
-      this.id = params['id'];
-      this.databse.getComentariosPelicula(params['id']).then((resp: any[]) => {
-        console.log(resp, 'resp');
+
+      this.id = +params['id']; // Convertir a número
+
+      try {
+        const resp = await this.database.getComentariosPelicula(this.id);
         this.comentarios = resp || [];
-      });
-      // this.comentarios = params['imagen'];;
+      } catch (error) {
+        console.error('Error al obtener comentarios:', error);
+      }
     });
+
+    try {
+      const resp = await this.database.comentarios.toPromise();
+      console.log(JSON.stringify(resp), 'resp');
+      this.comentarios = resp || [];
+    } catch (error) {
+      console.error('Error al obtener comentarios:', error);
+    }
   }
+
   async comentar() {
     const user = localStorage.getItem('user');
     if (user) {
       const parsedUser = JSON.parse(user);
-      this.databse.ComentarPelicula(parsedUser.email, this.id, this.comentario);
+      try {
+        await this.database.ComentarPelicula(parsedUser.email, this.id, this.comentario);
+      } catch (error) {
+        console.error('Error al comentar la película:', error);
+      }
     }
   }
 

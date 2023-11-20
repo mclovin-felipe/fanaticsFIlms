@@ -1,33 +1,18 @@
+// fingerprint.service.ts
 import { Injectable } from '@angular/core';
-import { NativeBiometric, BiometryType } from 'capacitor-native-biometric';
+import { NativeBiometricWrapper } from './native-biometric-wrapper.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FingerprintService {
-  constructor(private nativeBiometric: typeof NativeBiometric) {}
+  constructor(private nativeBiometric: NativeBiometricWrapper) {}
 
-  async performBiometricVerificatin() {
-    const result = await NativeBiometric.isAvailable();
+  async performBiometricVerification() {
+    const result = await this.nativeBiometric.isAvailable();
     console.log(result);
-    // if (!result.isAvailable) return;
 
-    // const isFaceID = result.biometryType == BiometryType.FINGERPRINT;
-
-    // const verified = await NativeBiometric.verifyIdentity({
-    //   reason: 'For easy log in',
-    //   title: 'Log in',
-    //   subtitle: 'Maybe add subtitle here?',
-    //   description: 'Maybe a description too?',
-    // })
-    //   .then(() => true)
-    //   .catch(() => false);
-
-    // if (!verified) return;
-
-    // const credentials = await NativeBiometric.getCredentials({
-    //   server: "www.example.com",
-    // });
+    // Resto del código...
   }
 
   // Save user's credentials
@@ -41,4 +26,6 @@ export class FingerprintService {
   // NativeBiometric.deleteCredentials({
   //   server: "www.example.com",
   // }).then();
+
+  // Otros métodos según sea necesario
 }
