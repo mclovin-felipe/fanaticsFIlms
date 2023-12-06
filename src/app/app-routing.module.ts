@@ -9,7 +9,7 @@ const routes: Routes = [
   },
 
   {
-    path: '',
+    path: 'sesion',
     loadChildren: () =>
       import('./pages/iniciosesion/iniciosesion.module').then(
         (m) => m.IniciosesionPageModule
